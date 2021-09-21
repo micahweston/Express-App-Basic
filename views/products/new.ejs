@@ -1,0 +1,29 @@
+<%- include('../partials/head')%>
+
+<%- include('../partials/navbar')%>
+
+<div class="container d-flex flex-column text-center justify-content-center w-25 border">
+    <h1>Add A Prodcuts</h1>
+    <form action="/products" method="POST">
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="name" placeholder="Product Name">
+        </div>
+        <div class="form-group">
+            <label for="price">Price (Unit)</label>
+            <input type="number" id="price" name="price" placeholder="Price">
+        </div>
+        <div class="form-group">
+            <label for="category">Select Category</label>
+            <select name="category" id="category">
+                <% for(let category of categories) { %> 
+                    <option value="<%=category%>"><%=category%></option>
+                <% } %> 
+            </select>
+            <button type="submit" class="btn btn-dark">Add Product</button>
+        </div>
+    </form>
+    <a class="btn btn-dark" href="/products">Cancel</a>
+</div>
+
+<%- include('../partials/footer')%>

@@ -1,0 +1,26 @@
+<%- include('../partials/head')%>
+
+<%- include('../partials/navbar')%>
+
+<div class="container d-flex flex-column justify-content-center w-25 border">
+    <div class="row justify-content-center mt-5 text-center">
+        <h1><%= product.name %> </h1>
+    </div>
+    <div class="row p-5">
+        <div class="col">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-dark">Price: <%= product.price %> </li>
+                <a class="list-group-item list-group-item-action list-group-item-secondary" href="/products?category=<%= product.category %>">Category: <%= product.category %></a>
+            </ul>
+        </div>
+    </div>
+    <div class="row  pb-5 justify-content-center">
+        <a class="btn btn-dark" href="/products">All Products</a>
+        <a class="btn btn-dark" href="/products/<%=product._id%>/edit">Edit Product</a>
+        <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-dark">Delete</button>
+        </form>
+    </div>
+</div>
+    
+<%- include('../partials/footer')%>

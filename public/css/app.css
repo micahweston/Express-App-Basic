@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+}
+
+.container {
+    margin-top: 150px;
+}
+
+.navbar {
+    margin-bottom: 100px;
+}

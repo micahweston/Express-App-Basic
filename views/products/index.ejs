@@ -1,0 +1,22 @@
+<%- include('../partials/head')%>
+
+<%- include('../partials/navbar')%>
+
+<div class="container d-flex flex-column text-center w-25 border pt-5 pb-5">
+    <h1><%= category.toUpperCase() %> Products</h1>
+    <div class="row p-5">
+        <div class="col">
+            <div class="list-group d-flex flex-column">
+                <% for(let product of products) { %> 
+                    <a class="list-group-item list-group-item-action list-group-item-dark" href="/products/<%= product._id %>"><%= product.name %></a>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-dark" href="/products/new">New Product</a>
+    <% if(category !== 'All'){%> 
+        <a href="/products" class="btn btn-dark mt-2">All Products</a>
+    <% } %> 
+</div>
+
+<%- include('../partials/footer')%>
